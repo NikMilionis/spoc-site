@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "author": "daspinola",
+  "author": "Spearing",
   "license": "MIT",
   "dependencies": {
     "express": "^4.15.3",
