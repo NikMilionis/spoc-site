@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Event Detail</title>
+    <title>Register</title>
+
     <!--    Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -23,11 +24,10 @@
     <!--    Google jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
-    <link rel="stylesheet" src="css/event_detail.css" />
-
 </head>
 <body>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#"><img src="Icon-removebg-preview.png" width="30" height="30"/> Science-Fiction
         People of Clark</a>
@@ -46,37 +46,37 @@
 </nav>
 
 
-
-<section id="event_detail" class="mx-5">
-    <h1>*Event Name*</h1>
-    <div class="row">
-        <div class="card col-sm-12 col-lg-8">
-            <div class="card-body">
-                <div class="row justify-content-between">
-                    <div class="col-5">
-                        <h4>Date and time of Event</h4>
-                    </div>
-                    <div class="col-5">
-                        <h4>Location of Event</h4>
-                    </div>
-                </div>
-                <div>
-                    <p>
-                        Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event.
-                        Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event. Details about event.
-
-                    </p>
-
-                </div>
+<form class="m-2">
+    <div class="card col-sm-12 col-lg-6">
+        <h3 class="mx-2">Register New Account</h3>
+        <div class="col-10 mt-3 mx-2">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" class="form-control" id="username" placeholder="username">
+        </div>
+        <div class="col-10  mx-2">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="password">
+        </div>
+        <div class="col-10  mx-2">
+            <label for="passwordCon" class="form-label">Confirm Password:</label>
+            <input type="password" class="form-control" id="passwordCon" placeholder="password">
+        </div>
+        <div class="col-10 mx-2">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="email">
+        </div>
+        <div class="col-10  mb-4 mx-2">
+            <label for="avatar" class="form-label">User Avatar Image URL:</label>
+            <input type="text" class="form-control" id="avatar" placeholder="URL">
+        </div>
+        <div class="row mx-1">
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-primary">Register</button>
+                <button class="btn btn-outline-danger">Cancel</button>
             </div>
         </div>
-        <div class="card col-sm-12 col-lg-4">
-            <img src="Icon-removebg-preview.png" id="event_img">
-
-        </div>
-
     </div>
-</section>
+</form>
 
 </body>
 </html>
