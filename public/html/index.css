@@ -1,0 +1,16 @@
+
+.banner_imgs {
+    height: 10rem;
+}
+
+.carousel{
+    height:360px;
+}
+.carousel-inner > .carousel-item > img {
+    max-height: 360px;
+}
+
+.w-100{
+    width: 100% !important;
+    height: 75vh;
+}
