@@ -1,0 +1,7 @@
+All the files/code contained in this folder are need for the use
+of  the navbar site wide.
+
+Essentially copy the code in the html, check and change the links,
+and then have the page use the CSS and JS files (no need to copy it repeatedly)
+
+-Nik
