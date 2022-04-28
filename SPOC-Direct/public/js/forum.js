@@ -1,4 +1,6 @@
 function get_post_object(post, idx) {
+
+     //console.log(post.timepost[0].date)
     return `<li class="list-group-item" data-p="${post._id}">
                 <div class="row ${idx % 2 === 0 ? 'even_row' : 'odd_row'}">
                     <div class="col-lg-3 imgDiv">
@@ -6,7 +8,8 @@ function get_post_object(post, idx) {
                     </div>
                     <div class="col-lg-6 infoDiv">
                         <h2 class="post_title">${post.title}</h2>
-                        <p class="rating larger_text cel_noto">tags: ${post.tags}</p>
+                        <p class="tags">tags: ${post.tags}</p>
+                        <p class="time">${post.timepost[0].date} ${post.timepost[0].time}</p>
                     </div>
                     <div class="col-lg-3 d-flex justify-content-end buttonDiv">
                         <input type="checkbox" class="check_box" value="${post._id}">
@@ -26,11 +29,19 @@ function showList(posts) {
         location.href = "post_detail.html?post_id=" + post_id;
     });
 }
+//timetest
+// let times = [];
+// $('body').on('click', function (){
+//     const time = new Date().toLocaleTimeString()
+//     times.push(time)
+  //console.log(time)
+  //console.log(times)
+// })
 
 $.getJSON("/get_all_posts")
     .done(function (data) {
         if (data.message === "success") {
-            console.log(data.data)
+             //console.log(data.data)
             showList(data.data);
         }
     });

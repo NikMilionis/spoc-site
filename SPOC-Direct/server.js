@@ -14,10 +14,32 @@ mongoose.connect('mongodb://localhost:27017/forumDB',
         console.log("db connection successful");
     });
 
-const date = new Date()
-const year = date.getFullYear();
 
 // console.log(year)
+
+const timeSchema = {
+    time: {
+        type: String
+    },
+    date: {
+        type: String
+    }
+}
+
+const replySchema = {
+
+    username: {
+        type: String
+    },
+    replyText: {
+        type: String
+    },
+    timereply: [
+        timeSchema
+    ]
+
+
+}
 
 const forumPostSchema = {
     title: {
@@ -40,11 +62,14 @@ const forumPostSchema = {
         type: String
     },
     replys: [
-        //{username: String},
-        {replyText: String}
+        replySchema
+    ],
+    timepost: [
+        timeSchema
     ]
 
 }
+
 
 const Post = mongoose.model('Post', forumPostSchema)
 
@@ -111,13 +136,22 @@ app.get('/forum_edit', (req, res) => {
 
 app.post("/forum_edit", (req, res) => {
 
-    const tagArr = req.body.tags.split('#')
+    const tagArr = req.body.tags.split(' ,')
+
+    const timeTime = new Date().toLocaleTimeString();
+    const dateDate = new Date().toLocaleDateString()
+    console.log(timeTime + ' ' + dateDate);
+
 
     const post = {
         title: req.body.title,
         url: req.body.url,
         postdetail: req.body.postdetail,
-        tags: tagArr
+        tags: tagArr,
+        timepost: {
+            time: timeTime,
+            date: dateDate
+        }
     }
 
     console.log(req.body.tags)
@@ -200,9 +234,16 @@ app.post('/reply', (req, res) => {
 
     const post_id = req.body._id
 
+    const timeTime = new Date().toLocaleTimeString();
+    const dateDate = new Date().toLocaleDateString()
+
     const replyInfo = {
-        //username: "testname",
-        replyText: req.body.replyText
+        username: "testname",
+        replyText: req.body.replyText,
+        timereply: {
+            time: timeTime,
+            date: dateDate
+        }
     }
     console.log(post_id)
     console.log(replyInfo)
@@ -216,10 +257,10 @@ app.post('/reply', (req, res) => {
                 }
             },
             {},
-            (err)=>{
-                if(err){
+            (err) => {
+                if (err) {
                     res.send({
-                        message:"database error"
+                        message: "database error"
                     })
                 } else {
                     // res.send({

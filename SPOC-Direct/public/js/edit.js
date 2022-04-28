@@ -31,7 +31,7 @@ if (errorMessage) {
 if (post_id && !errorMessage) {
     $.getJSON('/get_post_by_id?post_id=' + post_id).done((data) => {
         if (data['message'] = 'success') {
-            console.log(data.data)
+             //console.log(data.data)
             fillPost(data.data)
         }
     })
