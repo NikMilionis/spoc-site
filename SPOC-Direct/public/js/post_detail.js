@@ -11,8 +11,10 @@ function load_post(post) {
     $('#url').attr("src", post.url);
     $('#postdetail').text(post.postdetail);
     $('#tags').text(post.tags);
+    $('#username').text("usergoeshere")
     $('#date').text(post.timepost[0].time
         + " " + post.timepost[0].date);
+    $('title').text(post.title + ' - ' + "usergoeshere")
 
 }
 

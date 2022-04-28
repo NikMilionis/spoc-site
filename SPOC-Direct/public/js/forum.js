@@ -1,5 +1,6 @@
 function get_post_object(post, idx) {
 
+
      //console.log(post.timepost[0].date)
     return `<li class="list-group-item" data-p="${post._id}">
                 <div class="row ${idx % 2 === 0 ? 'even_row' : 'odd_row'}">
@@ -11,9 +12,7 @@ function get_post_object(post, idx) {
                         <p class="tags">tags: ${post.tags}</p>
                         <p class="time">${post.timepost[0].date} ${post.timepost[0].time}</p>
                     </div>
-                    <div class="col-lg-3 d-flex justify-content-end buttonDiv">
-                        <input type="checkbox" class="check_box" value="${post._id}">
-                    </div>
+              
                 </div>
           </li>`
 }
@@ -24,7 +23,13 @@ function showList(posts) {
         $('#post_list').append(get_post_object(post, idx));
     });
 
-    $('.imageDiv, .infoDiv').on('click', function () {
+    $('.post_title').hover(function () {
+        $(this).toggleClass('highlight_forum')
+        console.log("hovering")
+
+    })
+
+    $('.post_title').on('click', function () {
         const post_id = $(this).parents('li').attr('data-p');
         location.href = "post_detail.html?post_id=" + post_id;
     });

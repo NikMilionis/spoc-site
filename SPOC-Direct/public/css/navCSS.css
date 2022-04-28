@@ -352,3 +352,13 @@ section {
     height: 30px;
 }
 
+
+.highlight_forum{
+    color: #007bff;
+    /*background-color: #2e6e9e;*/
+}
+
+.footer{
+    background-color: white;
+    min-height: calc(30vh - 40px);
+}
