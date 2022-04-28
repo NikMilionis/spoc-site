@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Forum</title>
 
+    <script src="../js/forum.js" defer></script>
 
 
     <!--    Bootstrap-->
@@ -36,11 +37,6 @@
     <script src="../js/datepicker.js" defer></script>
     <script src="../js/plugins.js" defer></script>
     <script src="../js/main.js" defer></script>
-
-
-
-
-
 
 
 </head>
@@ -79,5 +75,17 @@
         </div>
     </header>
 </div>
+
+<button class="btn btn-info" onclick="window.location.href='/forum_edit'">New Forum Post</button>
+
+<section class="container">
+    <div class="row d-flex justify-content-center"></div>
+    <div class="col-lg-12">
+        <ul id="post_list" class="list-group">
+
+        </ul>
+    </div>
+</section>
+
 </body>
 </html>
