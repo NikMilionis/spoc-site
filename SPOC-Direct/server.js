@@ -218,11 +218,128 @@ app.get('/register', (req, res) => {
     }
 });
 
+app.get('/get_user_by_id',
+    function (req, res) {
+        User.find({"_id": req.query.user_id}, function (err, data) {
+            if (err || data.length === 0) {
+                console.log('ERROR! not sending to JSON')
+                res.send({
+                    "message": "internal database error",
+                    "data": {}
+                });
+            } else {
+                console.log('s8c')
+
+                res.send({
+                    "message": "success",
+                    "data": data[0]
+                })
+            }
+        });
+    });
+
+
+app.get('/get_current_user', function (req,res){
+    if(req.isAuthenticated()){
+        res.send({
+            message:"success",
+            data: req.user
+
+        })
+    }else{
+        res.send({
+            message:"user not found",
+            data:{}
+        })
+    }
+});
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect("/");
+});
+
+app.get('/forum', (req, res) => {
+    if (req.query.error) {
+        res.redirect("/forum.html?error=" + req.query.error);
+    } else {
+        res.redirect("/html/forum.html");
+    }
+});
+
+app.get('/register', (req, res) => {
+    if (req.query.error) {
+        res.redirect("/register.html?error=" + req.query.error);
+    } else {
+        res.redirect("/html/register.html");
+    }
+});
+
 app.get('/login', (req, res) => {
     if (req.query.error) {
         res.sendFile("/login.html?error=" + req.query.error);
     } else {
         res.redirect("/html/login.html");
+    }
+});
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect("/");
+});
+
+app.post('/login', (req, res) => {
+    const user = new User({
+        username: req.body.username,
+        password: req.body.password
+    });
+    req.login(user, (err)=>{
+        if(err){
+            res.redirect("/login?error=Database error");
+        } else{
+            const authenticate=passport.authenticate('local',{
+                successRedirect:"/",
+                failureRedirect:"/login?error= username and password do not match"
+            })
+            authenticate(req,res);
+        }
+    })
+});
+
+
+app.post('/register', (req, res) => {
+    const newUser={
+        username: req.body.username,
+        password: req.body.password,
+        fullname: req.body.email,
+        profile: req.body.avatar
+    }
+    User.register(newUser, req.body.password, (err, user)=>{
+        if(err){
+            console.log(err);
+            res.redirect('/register?error=' + err);
+
+        }else{
+            console.log(user);
+            const authenticate= passport.authenticate('local');
+            authenticate(req, res, ()=>{
+                res.redirect("/html/account.html");
+            });
+        }
+    })
+});
+app.get("/account", (req, res) => {
+    //save the user to the movie
+    const user={
+        username: req.body.username,
+        password: req.body.password,
+        fullname: req.body.email,
+        profile: req.body.avatar
+    }
+    if(req.isAuthenticated()){
+        res.redirect("/html/account.html");
+    }else{
+        res.redirect("/html/login");
     }
 });
 
