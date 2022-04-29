@@ -55,6 +55,7 @@
                             <li><a href="/">Home</a></li>
                             <li><a href="#">Events</a></li>
                             <li><a href="/forum">Forum</a></li>
+                            <li><a href="/election">Election</a></li>
 
                             <li><a href="#">User</a>
                                 <!--   Change 'User' to username when logged in -->
@@ -79,32 +80,119 @@
 
 
 <section id="elect_info">
-    <h1>SPOC Election Home Page</h1>
-    <div class="row">
-        <div class="col-sm-12 col-md-8">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+    <div class="mx-4">
+        <h1>SPOC Election Home Page</h1>
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Positions for election at SPOC</h4>
+                        <div class="row">
+                            <div class="card col-sm-12 col-md-6 col-lg-3">
+                                <div class="card-body">
+                                    <h5>President <i class="fa fa-user-tie"></i></h5>
+                                    <hr>
+                                    <p>The President leads the club and helps organize future events and makes the final
+                                        decision</p>
+                                </div>
+                            </div>
+                            <div class="card col-sm-12 col-md-6 col-lg-3">
+                                <div class="card-body">
+                                    <h5>Vice President <i class="fa fa-user-tie"></i></h5>
+                                    <hr>
+                                    <p>Advises the president and has authority to plan events and manage the club</p>
+                                </div>
+                            </div>
+                            <div class="card col-sm-12 col-md-6 col-lg-3">
+                                <div class="card-body">
+                                    <h5>Secretary <i class="fa fa-scroll"></i></h5>
+                                    <hr>
+                                    <p>In charge of the keeping of documentation on the club such as keeping the list of
+                                        members upto date</p>
+
+
+                                </div>
+                            </div>
+                            <div class="card col-sm-12 col-md-6 col-lg-3">
+                                <div class="card-body">
+                                    <h5>Treasurer <i class="fa fa-money-bill"></i></h5>
+                                    <hr>
+                                    <p>Keeps track and plans or secures the funds needed for the running of the club and
+                                        events</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Current Election:</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Active till: 5/12/2022</h6>
+                        <div class="card">
+                            <div class="card-body">
+                                <h7 class="card-title">Current Election:</h7>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <ul>
+                                            <li>
+                                                <h8>President</h8>
+                                            </li>
+                                            <li>
+                                                <p>3 candidates</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <ul>
+                                            <li>
+                                                <h8>Vice President</h8>
+                                            </li>
+                                            <li>
+                                                <p>2 candidates</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <ul>
+                                            <li>
+                                                <h8>Secretary</h8>
+                                            </li>
+                                            <li>
+                                                <p>3 candidates</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <ul>
+                                            <li>
+                                                <h8>Treasurer</h8>
+                                            </li>
+                                            <li>
+                                                <p>4 candidates</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="d-grid">
+                                    <!--    Make sure this if not logged in or already voted sends user elsewhere-->
+                                    <button class="btn btn-outline-info btn-block mt-3" onclick="window.location='../html/election_vote.html'" type="button">Vote
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!--    Make sure this if not logged in or already voted sends user elsewhere-->
+                        <!--                        <button class="btn btn-outline-info" href="#">Vote</button>-->
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-md-4">
-            <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-        </div>
     </div>
-
 </section>
 
 
@@ -128,16 +216,16 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ul>
-                                <li><a href="/register"><i class="fa fa-stop"></i>Register</a></li>
-                                <li><a href="/login"><i class="fa fa-stop"></i>Login</a></li>
-                                <li><a href="/profile"><i class="fa fa-stop"></i>My Profile</a></li>
+                                <li><a href="/register"><i class="fa fa-angle-right"></i>Register</a></li>
+                                <li><a href="/login"><i class="fa fa-angle-right"></i>Login</a></li>
+                                <li><a href="/profile"><i class="fa fa-angle-right"></i>My Profile</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul>
-                                <li><a href="/forum"><i class="fa fa-stop"></i>Forum</a></li>
-                                <li><a href="#"><i class="fa fa-stop"></i>Events</a></li>
-                                <li><a href="/"><i class="fa fa-stop"></i>About Us</a></li>
+                                <li><a href="/forum"><i class="fa fa-angle-right"></i>Forum</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i>Events</a></li>
+                                <li><a href="/"><i class="fa fa-angle-right"></i>About Us</a></li>
                             </ul>
                         </div>
                     </div>
