@@ -275,3 +275,11 @@ app.post('/reply', (req, res) => {
     }
 })
 
+app.get('/election', (req, res) => {
+    if (req.query.error) {
+        res.redirect("/html/election.html?error=" + req.query.error);
+    } else {
+        res.redirect("/html/election.html");
+    }
+});
+
