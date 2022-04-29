@@ -8,10 +8,10 @@
          like bootstrap 3...-->
     <!-- Also annoying that the template comes with the full FILES, not just links, for these
         dependencies meaning work had to be done to lessen their use-->
-    <title>SPOC Home</title>
-
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SPOC Home</title>
+    <script src="../js/index.js" defer></script>
 
     <!--    Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -62,16 +62,15 @@
                             <li class='active'><a href="/">Home</a></li>
                             <li><a class="scrollTo" data-scrollTo="blog" href="#">Events</a></li>
                             <li><a href="/forum">Forum</a></li>
-<li><a href="/election">Election</a></li>
                             <li><a class="scrollTo" data-scrollTo="about" href="#">About Us</a></li>
-                            <li><a href="#">User</a>
+                            <li><a id="showname" href="/account">User</a>
                                 <!--   Change 'User' to username when logged in -->
                                 <ul class="sub-menu">
-                                    <li><a href="/login">Log In</a></li>
-                                    <li><a href="/register">Create New Account</a></li>
+                                    <li><a class="login" href="/login">Log In</a></li>
+                                    <li><a class="login" href="/register">Create New Account</a></li>
                                     <!-- Only visible Log out and Account when logged in-->
-                                    <li><a href="#">My Account</a></li>
-                                    <li><a href="#">Log out</a></li>
+                                    <li><a class="logout" href="/account">My Account</a></li>
+                                    <li><a class="logout" href="/logout">Log out</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -389,7 +388,7 @@
 </section>
 
 
-<footer class="footer mt-5">
+<footer>
     <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -399,6 +398,15 @@
                     </div>
                     <p>Science-Fiction People of Clark is a student run club at Clark Univeristy which appeals to all
                         interested</p>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-rss"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="col-md-4">
@@ -409,16 +417,16 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ul>
-                                <li><a href="/register"><i class="fa fa-angle-right"></i>Register</a></li>
-                                <li><a href="/login"><i class="fa fa-angle-right"></i>Login</a></li>
-                                <li><a href="/profile"><i class="fa fa-angle-right"></i>My Profile</a></li>
+                                <li><a href="#"><i class="fa fa-stop"></i>Register</a></li>
+                                <li><a href="#"><i class="fa fa-stop"></i>Login</a></li>
+                                <li><a href="#"><i class="fa fa-stop"></i>My Profile</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul>
-                                <li><a href="/forum"><i class="fa fa-angle-right"></i>Forum</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right"></i>Events</a></li>
-                                <li><a href="/"><i class="fa fa-angle-right"></i>About Us</a></li>
+                                <li><a href="#"><i class="fa fa-stop"></i>Forum</a></li>
+                                <li><a href="#"><i class="fa fa-stop"></i>Events</a></li>
+                                <li><a href="#"><i class="fa fa-stop"></i>About Us</a></li>
                             </ul>
                         </div>
                     </div>
